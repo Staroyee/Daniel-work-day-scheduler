@@ -23,7 +23,10 @@ $(function () {
   //
   
   $('.saveBtn').on('click', function() {
-    $(this).
+    var description = document.querySelector(".description");
+    description = $(this)
+    localStorage.setItem('hour9', $(this).textArea);
+    alert(localStorage.getItem(hour9));
   })
 
   // TODO: Add code to apply the past, present, or future class to each time
