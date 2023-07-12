@@ -1,15 +1,7 @@
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
-  const hour9 = document.getElementById("hour-9");
-  const hour10 = document.getElementById("hour-10");
-  const hour11 = document.getElementById("hour-11");
-  const hour12 = document.getElementById("hour-12");
-  const hour1 = document.getElementById("hour-1");
-  const hour2 = document.getElementById("hour-2");
-  const hour3 = document.getElementById("hour-3");
-  const hour4 = document.getElementById("hour-4");
-  const hour5 = document.getElementById("hour-5");
+
 
 $(function () {
 
@@ -24,11 +16,34 @@ $(function () {
   
   $('.saveBtn').on('click', function() {
     console.log('buttonClicked');
-    let textArea = $(this).siblings(".description").val();
+    let textArea = $(this).siblings(".desc").val();
     let hours = $(this).parent().attr("id");
     localStorage.setItem(hours, textArea);
-    console.log('This is this', textArea);
-  })
+    console.log(hours);
+  });
+
+  function loadStorage() {
+    const desc9 = localStorage.getItem('hour-9');
+    document.querySelector('.description9').value = desc9;
+    const desc10 = localStorage.getItem('hour-10');
+    document.querySelector('.description10').value = desc10;
+    const desc11 = localStorage.getItem('hour-11');
+    document.querySelector('.description11').value = desc11;
+    const desc12 = localStorage.getItem('hour-12');
+    document.querySelector('.description12').value = desc12;
+    const desc1 = localStorage.getItem('hour-1');
+    document.querySelector('.description1').value = desc1;
+    const desc2 = localStorage.getItem('hour-2');
+    document.querySelector('.description2').value = desc2;
+    const desc3 = localStorage.getItem('hour-3');
+    document.querySelector('.description3').value = desc3;
+    const desc4 = localStorage.getItem('hour-4');
+    document.querySelector('.description4').value = desc4;
+    const desc5 = localStorage.getItem('hour-5');
+    document.querySelector('.description5').value = desc5;
+  }
+
+  loadStorage();
 
   // TODO: Add code to apply the past, present, or future class to each time
   // block by comparing the id to the current hour. HINTS: How can the id
