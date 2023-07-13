@@ -13,7 +13,14 @@ $(function () {
   // time-block containing the button that was clicked? How might the id be
   // useful when saving the description in local storage?
   //
-  
+
+  $('#clear').on('click', function() {
+    console.log('localStorage Cleared');
+    localStorage.clear();
+    window.location.reload();
+  });
+
+
   $('.saveBtn').on('click', function() {
     console.log('buttonClicked');
     let textArea = $(this).siblings(".desc").val();
