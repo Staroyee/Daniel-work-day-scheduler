@@ -27,6 +27,7 @@ $(function () {
 function pastPresentFuture() {
 var currentTime = dayjs().format('H');
 console.log(currentTime)
+
 if (currentTime == 9) {
   $("#hour-9").removeClass("past");
   $("#hour-9").removeClass("future");
